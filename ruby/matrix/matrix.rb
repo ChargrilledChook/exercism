@@ -1,8 +1,27 @@
-=begin
-Write your code for the 'Matrix' exercise in this file. Make the tests in
-`matrix_test.rb` pass.
+# Splits an input string into an array delineated on the \n character
+# Then maps each element of that array into a subarray of integer values
+class Matrix
+  attr_reader :data
 
-To get started with TDD, see the `README.md` file in your
-`ruby/matrix` directory.
-=end
+  def initialize(input)
+    @data = convert_to_matrix(input)
+  end
 
+  def rows
+    data
+  end
+
+  def columns
+    data.transpose
+  end
+
+  private
+
+  def convert_to_matrix(input)
+    result = []
+    input.split("\n").each do |numbers|
+      result << numbers.split(' ').map(&:to_i)
+    end
+    result
+  end
+end
