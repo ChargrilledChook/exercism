@@ -1,8 +1,17 @@
-=begin
-Write your code for the 'Triangle' exercise in this file. Make the tests in
-`triangle_test.rb` pass.
+# Exercism
+class Triangle
+  attr_reader :sides
 
-To get started with TDD, see the `README.md` file in your
-`ruby/triangle` directory.
-=end
+  def initialize(sides)
+    @sides = sides
+  end
 
+  def equilateral?
+    sides.any?(0) ? false : sides.all?(sides.first)
+  end
+
+  def isosceles?
+
+  end
+
+end
