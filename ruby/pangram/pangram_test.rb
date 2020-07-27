@@ -39,28 +39,28 @@ class PangramTest < Minitest::Test
   end
 
   def test_pangram_with_underscores
-    skip
+    #skip
     sentence = 'the_quick_brown_fox_jumps_over_the_lazy_dog'
     result = Pangram.pangram?(sentence)
     assert result, "Expected true, got: #{result.inspect}. #{sentence.inspect} IS a pangram"
   end
 
   def test_pangram_with_numbers
-    skip
+    #skip
     sentence = 'the 1 quick brown fox jumps over the 2 lazy dogs'
     result = Pangram.pangram?(sentence)
     assert result, "Expected true, got: #{result.inspect}. #{sentence.inspect} IS a pangram"
   end
 
   def test_missing_letters_replaced_by_numbers
-    skip
+    #skip
     sentence = '7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog'
     result = Pangram.pangram?(sentence)
     refute result, "Expected false, got: #{result.inspect}. #{sentence.inspect} is NOT a pangram"
   end
 
   def test_pangram_with_mixed_case_and_punctuation
-    skip
+    #skip
     sentence = '"Five quacking Zephyrs jolt my wax bed."'
     result = Pangram.pangram?(sentence)
     assert result, "Expected true, got: #{result.inspect}. #{sentence.inspect} IS a pangram"
