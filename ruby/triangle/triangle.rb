@@ -21,18 +21,15 @@ class Triangle
   private
 
   def valid_triangle?
-    if sides.any?(0) || triangle_inequality?
+    if sides.any?(0) || invalid_sides?
       false
     else
       true
     end
   end
 
-  def triangle_inequality?
-    if sides[0] > sides[1] + sides[2] || sides[1] > sides[0] + sides[2] || sides[2] > sides[0] + sides[1]
-      true
-    else
-      false
-    end
+  def invalid_sides?
+    sides.max > sides.min(2).sum
   end
 end
+
