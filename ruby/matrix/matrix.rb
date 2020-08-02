@@ -1,18 +1,11 @@
 # Splits an input string into an array delineated on the \n character
 # Then maps each element of that array into a subarray of integer values
 class Matrix
-  attr_reader :data
+  attr_reader :rows, :columns
 
   def initialize(input)
-    @data = convert_to_matrix(input)
-  end
-
-  def rows
-    data
-  end
-
-  def columns
-    data.transpose
+    @rows = convert_to_matrix(input)
+    @columns = rows.transpose
   end
 
   private
