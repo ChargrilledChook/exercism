@@ -11,10 +11,6 @@ class Matrix
   private
 
   def convert_to_matrix(input)
-    result = []
-    input.split("\n").each do |numbers|
-      result << numbers.split(' ').map(&:to_i)
-    end
-    result
+    input.split("\n").map { |row| row.split(' ').map(&:to_i) }
   end
 end
