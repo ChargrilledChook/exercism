@@ -1,8 +1,18 @@
-=begin
-Write your code for the 'Sum Of Multiples' exercise in this file. Make the tests in
-`sum_of_multiples_test.rb` pass.
+class SumOfMultiples
+  attr_reader :a, :b
 
-To get started with TDD, see the `README.md` file in your
-`ruby/sum-of-multiples` directory.
-=end
+  def initialize(a, b)
+    @a = a
+    @b = b
+  end
 
+  def to(num)
+    (1...num).reduce(0) do |res, elt|
+      if (elt % a).zero? || (elt % b).zero?
+        res + elt
+      else
+        res
+      end
+    end
+  end
+end
