@@ -1,5 +1,3 @@
-# Splits an input string into an array delineated on the \n character
-# Then maps each element of that array into a subarray of integer values
 class Matrix
   attr_reader :rows, :columns
 

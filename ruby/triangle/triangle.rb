@@ -32,4 +32,3 @@ class Triangle
     sides.max > sides.min(2).sum
   end
 end
-
