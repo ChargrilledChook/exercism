@@ -1,8 +1,13 @@
-=begin
-Write your code for the 'Grains' exercise in this file. Make the tests in
-`grains_test.rb` pass.
+class Grains
+  def self.square(num)
+    raise ArgumentError unless num.positive? && num <= 64
 
-To get started with TDD, see the `README.md` file in your
-`ruby/grains` directory.
-=end
+    (1..num).reduce { |memo, _num| memo * 2 }
+  end
 
+  def self.total(num = 64)
+    return 1 if num == 1
+
+    square(num) + total(num - 1)
+  end
+end
