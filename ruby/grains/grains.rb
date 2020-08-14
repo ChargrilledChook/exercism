@@ -1,8 +1,8 @@
 class Grains
   def self.square(num)
-    raise ArgumentError unless num.positive? && num <= 64
+    raise ArgumentError unless num.between?(1, 64)
 
-    (1..num).reduce { |memo, _num| memo * 2 }
+    2**(num - 1)
   end
 
   def self.total(num = 64)
