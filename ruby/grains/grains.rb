@@ -9,5 +9,8 @@ class Grains
     return 1 if num == 1
 
     square(num) + total(num - 1)
+
+    # Non recursive implementation
+    # (1..num).reduce { |memo, elt| memo + square(elt) }
   end
 end
