@@ -1,32 +1,21 @@
+# Passes the tests but pretty ugly. 99 bottles of OOP would be a good reference to improve
 class Proverb
-  attr_reader :items
+  attr_reader :items, :qualifier
 
-  def initialize(*items)
+  def initialize(*items, qualifier: '')
     @items = items
+    @qualifier = qualifier
   end
 
   def to_s
     string = ''
     items.each_with_index do |item, idx|
       if idx == items.size - 1
-        string << "And all for the want of a #{items[0]}."
+        string << "And all for the want of a #{qualifier.empty? ? "#{items[0]}" : "#{qualifier} #{items[0]}"}."
       else
         string << "For want of a #{item} the #{items[idx + 1]} was lost.\n"
       end
     end
     string
   end
-
-  private
-
-  def verse(item)
-    "For want of an #{item} the #{items[idx+1]} was lost.\n"
-  end
-
-  def final
-    "And all for the want of a #{item}."
-  end
 end
-
-#"For want of an #{item} the #{items[idx+1]} was lost.\n"
-#"And all for the want of a #{item}."
