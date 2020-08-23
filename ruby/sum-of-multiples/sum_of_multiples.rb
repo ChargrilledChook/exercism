@@ -1,18 +1,18 @@
 class SumOfMultiples
-  attr_reader :a, :b
-
-  def initialize(a, b)
-    @a = a
-    @b = b
+  def initialize(*multiples)
+    @multiples = multiples
   end
 
-  def to(num)
-    (1...num).reduce(0) do |res, elt|
-      if (elt % a).zero? || (elt % b).zero?
-        res + elt
-      else
-        res
-      end
+  def to(total)
+    return 0 if multiples.include?(0)
+
+    (0...total).reduce(0) do |sum, num|
+      sum += num if multiples.any? { |multiple| (num % multiple).zero? }
+      sum
     end
   end
+
+  private
+
+  attr_reader :multiples
 end
