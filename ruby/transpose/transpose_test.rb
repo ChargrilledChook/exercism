@@ -31,7 +31,7 @@ class TransposeTest < Minitest::Test
   end
 
   def test_simple
-    skip
+    # skip
     input = "ABC\n123"
 
     expected = "A1\nB2\nC3"
@@ -40,7 +40,7 @@ class TransposeTest < Minitest::Test
   end
 
   def test_single_line
-    skip
+    # skip
     input = "Single line."
 
     expected = "S\ni\nn\ng\nl\ne\n \nl\ni\nn\ne\n."
@@ -49,7 +49,7 @@ class TransposeTest < Minitest::Test
   end
 
   def test_first_line_longer_than_second_line
-    skip
+    # skip
     input = "The fourth line.\nThe fifth line."
 
     expected = "TT\nhh\nee\n  \nff\noi\nuf\nrt\nth\nh \n l\nli\nin\nne\ne.\n."

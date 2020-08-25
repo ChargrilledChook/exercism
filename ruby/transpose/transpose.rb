@@ -1,7 +1,5 @@
 class Transpose
   def self.transpose(input)
-    return '' if input.empty?
-
-    input.chars.join("\n")
+    input.split("\n").map(&:chars).transpose.map(&:join).join("\n")
   end
 end
