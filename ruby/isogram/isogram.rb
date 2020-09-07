@@ -1,5 +1,8 @@
 class Isogram
   def self.isogram?(input)
-    true
+    word = input.downcase
+    word.chars.uniq == word.chars
   end
 end
+
+# All tests passing except for spaces and hyphens
