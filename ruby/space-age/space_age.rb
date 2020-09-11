@@ -1,6 +1,4 @@
 class SpaceAge
-  attr_reader :seconds
-
   EARTH_YEAR = 31_557_600
 
   CONVERTER = {
@@ -13,6 +11,8 @@ class SpaceAge
     uranus: EARTH_YEAR * 84.016846,
     neptune: EARTH_YEAR * 164.79132
   }.freeze
+
+  attr_reader :seconds
 
   def initialize(seconds)
     @seconds = seconds.to_f
