@@ -1,6 +1,6 @@
 module Isogram
   def self.isogram?(input)
-    word = input.downcase.scan(/\w+/).join
-    word.chars.uniq.size == word.chars.size
+    word = input.downcase.scan(/[a-z]/)
+    word.uniq.size == word.size
   end
 end
