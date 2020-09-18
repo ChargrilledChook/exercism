@@ -80,4 +80,14 @@ class IsogramTest < Minitest::Test
     input = "angola"
     refute Isogram.isogram?(input), "Expected false, '#{input}' is not an isogram"
   end
+
+  def test_utf8_isogram
+    input = "ação"
+    assert Isogram.isogram?(input), "Expected true, '#{input}' is an isogram"
+  end
+
+  def test_utf8_repeated_caracter
+    input = "ação-mãe"
+    refute Isogram.isogram?(input), "Expected false, '#{input}' is not an isogram"
+  end
 end
