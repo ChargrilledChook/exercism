@@ -2,20 +2,18 @@ class SpaceAge
   EARTH_YEAR = 31_557_600
 
   CONVERTER = {
-    earth: EARTH_YEAR,
-    mercury: EARTH_YEAR * 0.2408467,
-    venus: EARTH_YEAR * 0.61519726,
-    mars: EARTH_YEAR * 1.8808158,
-    jupiter: EARTH_YEAR * 11.862615,
-    saturn: EARTH_YEAR * 29.447498,
-    uranus: EARTH_YEAR * 84.016846,
-    neptune: EARTH_YEAR * 164.79132
+    earth: 1.0,
+    mercury: 0.2408467,
+    venus: 0.61519726,
+    mars: 1.8808158,
+    jupiter: 11.862615,
+    saturn: 29.447498,
+    uranus: 84.016846,
+    neptune: 164.79132
   }.freeze
 
-  attr_reader :seconds
-
   def initialize(seconds)
-    @seconds = seconds.to_f
+    @seconds = seconds.to_r / EARTH_YEAR
   end
 
   def on_earth
@@ -49,4 +47,8 @@ class SpaceAge
   def on_neptune
     seconds / CONVERTER[:neptune]
   end
+
+  private
+
+  attr_reader :seconds
 end
