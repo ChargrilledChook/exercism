@@ -1,8 +1,36 @@
-//
-// This is only a SKELETON file for the 'Protein Translation' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+export const translate = (rna) => {
+  const stops = ['UAA', 'UAG', 'UGA']
+  const proteins = {
+    AUG : 'Methionine',
+    UUU : 'Phenylalanine',
+    UUC : 'Phenylalanine',
+    UCU : 'Serine',
+    UCC : 'Serine',
+    UCA : 'Serine',
+    UCG : 'Serine',
+    UUG : 'Leucine',
+    UUA : 'Leucine',
+    UAU : 'Tyrosine',
+    UAC : 'Tyrosine',
+    UGU : 'Cysteine',
+    UGC : 'Cysteine',
+    UGG : 'Tryptophan',
+  }
 
-export const translate = () => {
-  throw new Error("Remove this statement and implement this function");
+  if (!rna) return [];
+
+  let codons = rna.match(/[\s\S]{1,3}/g) || [];
+  let res = [];
+  for(let i = 0; i < codons.length; i++){
+    let elt = codons[i]
+    if (stops.includes(elt)) {
+      break;
+    } else if(proteins[elt]){
+      res.push(proteins[elt]);
+    } else {
+      throw 'Invalid codon';
+    }
+  }
+
+  return res;
 };
