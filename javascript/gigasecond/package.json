@@ -34,5 +34,7 @@
     "lint-test": "eslint . && jest --no-cache ./* "
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "node-notifier": ">=8.0.1"
+  }
 }
