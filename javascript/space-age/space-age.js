@@ -11,6 +11,6 @@ export const planetRatios = {
 
 export const earthYear = 31_557_600;
 
-export const age = function ageOnPlanet(planet, time) {
-  return parseFloat((time / earthYear / planetRatios[planet]).toFixed(2));
+export const age = (planet, time) => {
+  return Number((time / earthYear / planetRatios[planet]).toFixed(2));
 };
